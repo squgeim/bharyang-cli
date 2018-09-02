@@ -1,0 +1,16 @@
+{
+  "name": "bharyang-cli",
+  "version": "0.0.1",
+  "description": "A tool to group and manage javascript imports",
+  "main": "src/index.js",
+  "bin": {
+    "bharyang": "./src/index.js"
+  },
+  "repository": "https://github.com/squgeim/bharyang-cli",
+  "author": "Shreya Dahal <shreyadahal@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "bharyang": "^0.0.3"
+  }
+}
