@@ -1,6 +1,12 @@
 const sortTypes = require('./constants/sortTypes');
 const sortImportsFromStream = require('./bharyang').sortImportsFromStream;
 
+/**
+ * Returns the sort type to apply from the command line arguments.
+ *
+ * @param {String[]} [argv] - defaults to process.argv
+ * @returns {String}
+ */
 function getSortTypeFromArgv(argv = process.argv) {
   const sortArgMap = {
     '--asc': sortTypes.ASC,
@@ -14,6 +20,13 @@ function getSortTypeFromArgv(argv = process.argv) {
   );
 }
 
+/**
+ * Process the input lines from stdin stream.
+ * Takes no argument.
+ *
+ * @returns {Promise} - resolves when sorting is complete, does not return any
+ *                      data.
+ */
 function processStdinStream() {
   const stdin = process.stdin;
   const sortType = getSortTypeFromArgv();
