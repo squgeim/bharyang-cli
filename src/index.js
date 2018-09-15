@@ -1,8 +1,15 @@
 #!/usr/bin/env node
 
-const isPipeAttached = require('./util/cli').isPipeAttached;
+const cli = require('./util/cli').default;
 const processStdinStream = require('./bharyangCli').processStdinStream;
 
-if (isPipeAttached()) {
+/**
+ * If a pipe is attached, ie, the stdin is a readable stream, process that
+ * stream; else, return invalid usage.
+ */
+if (cli.isPipeAttached()) {
   processStdinStream();
+} else {
+  console.log(cli.invalidUsageMessage());
+  process.exit(1);
 }

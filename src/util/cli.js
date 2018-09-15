@@ -7,4 +7,14 @@ function isPipeAttached() {
   return !process.stdin.isTTY;
 }
 
-exports.isPipeAttached = isPipeAttached;
+/**
+ * @returns {String} - Invalid usage message
+ */
+function invalidUsageMessage() {
+  return `Usage: cat importLines | bharyang-cli`;
+}
+
+exports.default = {
+  isPipeAttached: isPipeAttached,
+  invalidUsageMessage: invalidUsageMessage,
+};
