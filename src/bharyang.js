@@ -1,5 +1,5 @@
 const core = require('bharyang');
-const sortTypes = require('./constants/sortTypes');
+const sortTypes = require('./constants/sortTypes').default;
 
 /**
  * Returns the function to use for sorting the lines for the given type.

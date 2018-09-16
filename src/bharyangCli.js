@@ -1,4 +1,4 @@
-const sortTypes = require('./constants/sortTypes');
+const sortTypes = require('./constants/sortTypes').default;
 const sortImportsFromStream = require('./bharyang').sortImportsFromStream;
 
 /**
@@ -37,7 +37,7 @@ function processStdinStream() {
     })
     .catch(err => {
       process.stderr.write(err);
-      console.log('Oops. There was an error.');
+      console.error('Oops. There was an error.');
     });
 }
 
