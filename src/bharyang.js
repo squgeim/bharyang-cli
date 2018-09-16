@@ -36,9 +36,7 @@ function sortImportsFromStream(stream, sortType = sortTypes.GROUP) {
 
     stream.setEncoding('utf-8');
 
-    stream.on('readable', () => {
-      stream.on('data', s => str.push(s));
-    });
+    stream.on('data', s => str.push(s));
 
     stream.on('end', () => {
       resolve(sortFunction(str.join()));
